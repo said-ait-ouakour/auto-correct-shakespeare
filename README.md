@@ -2,7 +2,7 @@
 
 This repository contains a Python implementation of an auto correct system based on a probabilistic model. The system uses a corpus of Shakespearean texts to train the model and make suggestions for correcting input text. The implementation is deployed using FastAPI.
 
-to try it you Navigate to **[https://auto-correct-shakespare-1.sid41x4.repl.co/docs/]()**
+to try it you Navigate to **[https://auto-correct-shakespear.onrender.com]()**
 
 ## Architecture
 
