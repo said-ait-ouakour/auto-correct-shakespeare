@@ -5,7 +5,7 @@ from model.models import Corrector
 from pydantic import BaseModel
 import pandas as pd
 
-app = FastAPI()
+app = FastAPI('')
 
 corpus = pd.read_csv("./model/corpus.csv")
 
@@ -17,5 +17,12 @@ async def index(word: str):
         'word': word,
         'suggestions': corrector.correct(word),
     }
+    
+def run():
+  app.run(host="0.0.0.0", port=8000)
+
+def keep_alive():
+  server = Thread(target=run)
+  server.start()
     
     
