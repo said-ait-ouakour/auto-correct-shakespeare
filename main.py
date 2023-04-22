@@ -20,9 +20,7 @@ async def index(word: str):
     }
 
 @app.get('/')
-async def index(word: str):
-    corrector = Corrector(corpus=corpus, suggestion_limit=3)
-    
+async def index():
     return {
         'test1': 'https://https://auto-correct-shakespear.onrender.com/correct/lofe',
         'test2': 'https://https://auto-correct-shakespear.onrender.com/correct/sam'
