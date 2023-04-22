@@ -22,8 +22,8 @@ async def index(word: str):
 @app.get('/')
 async def index():
     return {
-        'test1': 'https://https://auto-correct-shakespear.onrender.com/correct/lofe',
-        'test2': 'https://https://auto-correct-shakespear.onrender.com/correct/sam'
+        'test1': 'https://auto-correct-shakespear.onrender.com/correct/lofe',
+        'test2': 'https://auto-correct-shakespear.onrender.com/correct/sam'
     }
 
 
