@@ -181,12 +181,4 @@ class Corrector():
         
         return ", ".join([w[0] for w in n_best])
 
-
-if __name__=="__main__":
-
-
-    corpus = pd.read_csv("./model/corpus.csv")
-   
-    word = str(input("word: "))
-    print(Corrector(corpus, 3, verbose=False).correct(word))
         
