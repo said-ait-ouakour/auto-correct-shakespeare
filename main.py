@@ -19,6 +19,17 @@ async def index(word: str):
         'suggestions': corrector.correct(word),
     }
 
+@app.get('/')
+async def index(word: str):
+    corrector = Corrector(corpus=corpus, suggestion_limit=3)
+    
+    return {
+        'test1': 'https://https://auto-correct-shakespear.onrender.com/correct/lofe',
+        'test2': 'https://https://auto-correct-shakespear.onrender.com/correct/sam'
+    }
+
+
+
 
 if __name__ == "__main__":
     app.run()
