@@ -6,7 +6,7 @@ from pydantic import BaseModel
 import pandas as pd
 from threading import Thread
 
-app = FastAPI('')
+app = FastAPI()
 
 corpus = pd.read_csv("./model/corpus.csv")
 
