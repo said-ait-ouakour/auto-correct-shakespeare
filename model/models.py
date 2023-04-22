@@ -1,7 +1,8 @@
+#bin/python3.7.9
+
 from collections import Counter
 import numpy as np
 import pandas as pd
-
 
 
 class Corrector():    
@@ -172,11 +173,20 @@ class Corrector():
         suggestions = []
         n_best = []
         
-        suggestions = list((word in self.vocab and word) or self.__edit_one_letter(word).intersection(self.vocab) or self.__edit_two_letters(word).intersection(self.vocab))[:self.suggestion_limit]
-        n_best = [[s, np.exp(self.log_probs[s])] for s in list(reversed(suggestions))]
+        suggestions = (word in self.vocab and [word]) or list(self.__edit_one_letter(word).intersection(self.vocab) or self.__edit_two_letters(word).intersection(self.vocab))[:self.suggestion_limit]
+                
+        n_best = [[s, np.exp(self.log_probs[s])] for s in list(suggestions)]
         
         if self.verbose: print("suggestions = ", [ sugg_cap.capitalize() for sugg_cap in suggestions])
         
         return ", ".join([w[0] for w in n_best])
 
+
+if __name__=="__main__":
+
+
+    corpus = pd.read_csv("./model/corpus.csv")
+   
+    word = str(input("word: "))
+    print(Corrector(corpus, 3, verbose=False).correct(word))
         
